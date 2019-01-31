@@ -8,22 +8,67 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <title>Builds | robtaylor.info</title>
   </head>
   <body>
-    <h1>Builds</h1>
+  <div class="header">
+        <h1 class="text-center">RT</h1>
+    </div>
 
-    <ul> 
+    <div class="heading">
+        <span>
+            <h1>Builds</h1>
+        </span>
+    </div>
+
+    <div class="container">
+    <a class="btn btn-primary" href="http://robtaylor.info" role="button" style="width: 100%;">Return to main website</a>
+    <br />
+    <br />
+
+    <div class="card text-center">
+        <div class="card-header">Testing Build</div>
+        <div class="card-body">
+            <h5 class="card-title">Latest Testing Build</h5>
+            <p class="card-text">This is the latest build ready for test.</p>
+            <a href="builds/test/build.apk" class="btn btn-primary">Download Build</a>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="card text-center">
+        <div class="card-header">Latest Build</div>
+        <div class="card-body">
+            <h5 class="card-title">Latest Build from Jenkins</h5>
+            <p class="card-text">This is the latest build from Jenkins. It's likely unstable and should only be used if instructed to.</p>
+            <a href="builds/latest/build.apk" class="btn btn-primary">Download Build</a>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="card" style="width: auto;">
+        <div class="card-header">Files and Directories</div>
+        <ul class="list-group list-group-flush">
     <?php 
         $dir = './builds'; 
         $files = scandir($dir); 
         foreach($files as $ind_file){ 
     ?> 
-        <li><a href="<?php echo $dir."/".$ind_file;?>"><?php echo $ind_file;?></li> 
+
+        <li class="list-group-item"><a href="<?php echo $dir."/".$ind_file;?>"><?php echo $ind_file;?></li>
     <?php 
     } 
     ?> 
-    </ul> 
+    </div>
+
+    </ul>
+    <br />
+    <br />
+</div> 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

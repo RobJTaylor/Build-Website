@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
     <title>Builds | robtaylor.info</title>
   </head>
   <body>
@@ -33,7 +36,28 @@
         <div class="card-body">
             <h5 class="card-title">Latest Testing Build</h5>
             <p class="card-text">This is the latest build ready for test.</p>
-            <a href="builds/test/build.apk" class="btn btn-primary">Download Build</a>
+            <br />
+            <?php
+                $files_android = scandir('builds/dissertation/test/android/', SCANDIR_SORT_DESCENDING);
+                $files_ios = scandir('builds/dissertation/test/ios/', SCANDIR_SORT_DESCENDING);
+                $android_file = "builds/dissertation/test/android/" . $files_android[0];
+                $ios_file = "builds/dissertation/test/ios/" . $files_ios[0];
+
+                if (is_dir($android_file)) {
+                    echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
+                } elseif (file_exists($android_file)) {
+                    echo "<a href='$android_file' class='btn btn-primary'></i>Download Android Build</a>";
+                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
+                }
+
+                echo "<br />";
+                if (is_dir($ios_file)) {
+                    echo "<button type='button' class='btn btn-primary' disabled>iOS Build Coming Soon</button>";
+                } elseif (file_exists($ios_file)) {
+                    echo "<a href='$ios_file' class='btn btn-primary'></i>Download iOS Build</a>";
+                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($ios_file)) . "</p>";
+                }
+            ?>
         </div>
     </div>
     <br />
@@ -44,7 +68,28 @@
         <div class="card-body">
             <h5 class="card-title">Latest Build from Jenkins</h5>
             <p class="card-text">This is the latest build from Jenkins. It's likely unstable and should only be used if instructed to.</p>
-            <a href="builds/latest/build.apk" class="btn btn-primary">Download Build</a>
+            <br />
+            <?php
+                $files_android = scandir('builds/dissertation/all/android/', SCANDIR_SORT_DESCENDING);
+                $files_ios = scandir('builds/dissertation/all/ios/', SCANDIR_SORT_DESCENDING);
+                $android_file = "builds/dissertation/all/android/" . $files_android[0];
+                $ios_file = "builds/dissertation/all/ios/" . $files_ios[0];
+
+                if (is_dir($android_file)) {
+                    echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
+                } elseif (file_exists($android_file)) {
+                    echo "<a href='$android_file' class='btn btn-primary'></i>Download Android Build</a>";
+                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
+                }
+
+                echo "<br />";
+                if (is_dir($ios_file)) {
+                    echo "<button type='button' class='btn btn-primary' disabled>iOS Build Coming Soon</button>";
+                } elseif (file_exists($ios_file)) {
+                    echo "<a href='$ios_file' class='btn btn-primary'></i>Download iOS Build</a>";
+                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($ios_file)) . "</p>";
+                }
+            ?>
         </div>
     </div>
     <br />

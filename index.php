@@ -32,9 +32,9 @@
     <br />
 
     <div class="card text-center">
-        <div class="card-header">Testing Build</div>
+        <div class="card-header">Dissertation - Testing Build</div>
         <div class="card-body">
-            <h5 class="card-title">Dissertation - Latest Testing Build</h5>
+            <h5 class="card-title">Latest Testing Build</h5>
             <p class="card-text">This is the latest build ready for test.</p>
             <br />
             <?php
@@ -64,9 +64,9 @@
     <br />
 
     <div class="card text-center">
-        <div class="card-header">Latest Build</div>
+        <div class="card-header">Dissertation - Latest Build</div>
         <div class="card-body">
-            <h5 class="card-title">Dissertation - Latest Build from Jenkins</h5>
+            <h5 class="card-title">Latest Build from Jenkins</h5>
             <p class="card-text">This is the latest build from Jenkins. It's likely unstable and should only be used if instructed to.</p>
             <br />
             <?php

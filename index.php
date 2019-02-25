@@ -40,7 +40,7 @@
             <?php
                 $files_android = scandir('builds/dissertation/android/stable_release/', SCANDIR_SORT_DESCENDING);
                 $files_ios = scandir('builds/dissertation/ios/stable_release/', SCANDIR_SORT_DESCENDING);
-                $android_file = "builds/dissertation/android/stable_release" . $files_android[0];
+                $android_file = "builds/dissertation/android/stable_release/" . $files_android[0];
                 $ios_file = "builds/dissertation/ios/stable_release/" . $files_ios[0];
 
                 if (is_dir($android_file)) {

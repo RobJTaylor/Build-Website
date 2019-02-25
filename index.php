@@ -38,10 +38,10 @@
             <p class="card-text">This is the latest build ready for test.</p>
             <br />
             <?php
-                $files_android = scandir('builds/dissertation/test/android/app/build/outputs/apk/release/', SCANDIR_SORT_DESCENDING);
-                $files_ios = scandir('builds/dissertation/test/ios/', SCANDIR_SORT_DESCENDING);
-                $android_file = "builds/dissertation/test/android/app/build/outputs/apk/release/" . $files_android[0];
-                $ios_file = "builds/dissertation/test/ios/" . $files_ios[0];
+                $files_android = scandir('builds/dissertation/android/stable_release/', SCANDIR_SORT_DESCENDING);
+                $files_ios = scandir('builds/dissertation/ios/stable_release/', SCANDIR_SORT_DESCENDING);
+                $android_file = "builds/dissertation/android/stable_release" . $files_android[0];
+                $ios_file = "builds/dissertation/ios/stable_release/" . $files_ios[0];
 
                 if (is_dir($android_file)) {
                     echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
@@ -70,10 +70,10 @@
             <p class="card-text">This is the latest build from Jenkins. It's likely unstable and should only be used if instructed to.</p>
             <br />
             <?php
-                $files_android = scandir('builds/dissertation/all/android/app/build/outputs/apk/release/', SCANDIR_SORT_DESCENDING);
-                $files_ios = scandir('builds/dissertation/all/ios/', SCANDIR_SORT_DESCENDING);
-                $android_file = "builds/dissertation/all/android/app/build/outputs/apk/release/" . $files_android[0];
-                $ios_file = "builds/dissertation/all/ios/" . $files_ios[0];
+                $files_android = scandir('builds/dissertation/android/unstable_release/', SCANDIR_SORT_DESCENDING);
+                $files_ios = scandir('builds/dissertation/ios/unstable_release/', SCANDIR_SORT_DESCENDING);
+                $android_file = "builds/dissertation/android/unstable_release/" . $files_android[0];
+                $ios_file = "builds/dissertation/ios/unstable_release/" . $files_ios[0];
 
                 if (is_dir($android_file)) {
                     echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";

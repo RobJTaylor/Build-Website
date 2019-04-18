@@ -39,9 +39,7 @@
             <br />
             <?php
                 $files_android = scandir('builds/dissertation/android/stable_release/', SCANDIR_SORT_DESCENDING);
-                $files_ios = scandir('builds/dissertation/ios/stable_release/', SCANDIR_SORT_DESCENDING);
                 $android_file = "builds/dissertation/android/stable_release/" . $files_android[0];
-                $ios_file = "builds/dissertation/ios/stable_release/" . $files_ios[0];
 
                 if (is_dir($android_file)) {
                     echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
@@ -50,13 +48,7 @@
                     echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
                 }
 
-                echo "<br />";
-                if (is_dir($ios_file)) {
-                    echo "<button type='button' class='btn btn-primary' disabled>iOS Build Coming Soon</button>";
-                } elseif (file_exists($ios_file)) {
-                    echo "<a href='$ios_file' class='btn btn-primary'></i>Download iOS Build</a>";
-                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($ios_file)) . "</p>";
-                }
+                echo "<a href='https://docs.google.com/forms/d/e/1FAIpQLScDcsVhkXA4WOZ7IMOfrWm1dAuOcvLF5xOmJWcueruvYwBN0w/viewform?usp=sf_link' class='btn btn-info'>Provide Release Feedback</a>";
             ?>
         </div>
     </div>
@@ -71,9 +63,7 @@
             <br />
             <?php
                 $files_android = scandir('builds/dissertation/android/unstable_release/', SCANDIR_SORT_DESCENDING);
-                $files_ios = scandir('builds/dissertation/ios/unstable_release/', SCANDIR_SORT_DESCENDING);
                 $android_file = "builds/dissertation/android/unstable_release/" . $files_android[0];
-                $ios_file = "builds/dissertation/ios/unstable_release/" . $files_ios[0];
 
                 if (is_dir($android_file)) {
                     echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
@@ -82,13 +72,6 @@
                     echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
                 }
 
-                echo "<br />";
-                if (is_dir($ios_file)) {
-                    echo "<button type='button' class='btn btn-primary' disabled>iOS Build Coming Soon</button>";
-                } elseif (file_exists($ios_file)) {
-                    echo "<a href='$ios_file' class='btn btn-primary'></i>Download iOS Build</a>";
-                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($ios_file)) . "</p>";
-                }
             ?>
         </div>
     </div>

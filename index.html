@@ -37,19 +37,8 @@
             <h5 class="card-title">Latest Testing Build</h5>
             <p class="card-text">This is the latest build ready for test.</p>
             <br />
-            <?php
-                $files_android = scandir('builds/dissertation/android/stable_release/', SCANDIR_SORT_DESCENDING);
-                $android_file = "builds/dissertation/android/stable_release/" . $files_android[0];
-
-                if (is_dir($android_file)) {
-                    echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
-                } elseif (file_exists($android_file)) {
-                    echo "<a href='$android_file' class='btn btn-primary'>Download Android Build</a>";
-                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
-                }
-
-                echo "<a href='https://docs.google.com/forms/d/e/1FAIpQLScDcsVhkXA4WOZ7IMOfrWm1dAuOcvLF5xOmJWcueruvYwBN0w/viewform?usp=sf_link' class='btn btn-info'>Provide Release Feedback</a>";
-            ?>
+            <button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br /> <br />
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLScDcsVhkXA4WOZ7IMOfrWm1dAuOcvLF5xOmJWcueruvYwBN0w/viewform?usp=sf_link' class='btn btn-info'>Provide Release Feedback</a>
         </div>
     </div>
     <br />
@@ -61,42 +50,12 @@
             <h5 class="card-title">Latest Build from Jenkins</h5>
             <p class="card-text">This is the latest build from Jenkins. It's likely unstable and should only be used if instructed to.</p>
             <br />
-            <?php
-                $files_android = scandir('builds/dissertation/android/unstable_release/', SCANDIR_SORT_DESCENDING);
-                $android_file = "builds/dissertation/android/unstable_release/" . $files_android[0];
-
-                if (is_dir($android_file)) {
-                    echo "<button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />";
-                } elseif (file_exists($android_file)) {
-                    echo "<a href='$android_file' class='btn btn-primary'>Download Android Build</a>";
-                    echo "<p class='lead'>Build uploaded: " . date("F d Y H:i:s", filemtime($android_file)) . "</p>";
-                }
-
-            ?>
+            <button type='button' class='btn btn-primary' disabled>Android Build Coming Soon</button> <br />
         </div>
     </div>
     <br />
     <br />
-
-    <div class="card" style="width: auto;">
-        <div class="card-header">Files and Directories</div>
-        <ul class="list-group list-group-flush">
-    <?php 
-        $dir = './builds'; 
-        $files = scandir($dir); 
-        foreach($files as $ind_file){ 
-    ?> 
-
-        <li class="list-group-item"><a href="<?php echo $dir."/".$ind_file;?>"><?php echo $ind_file;?></li>
-    <?php 
-    } 
-    ?> 
-    </div>
-
-    </ul>
-    <br />
-    <br />
-</div> 
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
